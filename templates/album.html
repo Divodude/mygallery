@@ -1,0 +1,13 @@
+
+{% extends "index.html" %}
+{% load static %}
+
+{% block Photos %}
+<div class="row gallery">
+    {% for i in img %}
+    <div class="col-md-4 mb-4">
+        <img src="{% static i %}" alt="Image" class="img-fluid">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

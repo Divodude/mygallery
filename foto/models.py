@@ -1,7 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
+
+
+
+
+class profile(models.Model):
+    user=models.OneToOneField(User,primary_key=True,on_delete=models.CSACADE)
+    avater=models.ImageField(null=True,default="static\doctor.jpg")
+
+    
+
 
 """class iamuser(AbstractUser):
     username=None
@@ -15,4 +26,5 @@ class dataset(models.Model):
     date=models.DateTimeField(null=False)
     event=models.CharField(null=True,max_length=50)
     name=models.CharField(null=True,max_length=50)
+    likes=models.IntegerField(null=True,default=0)
 

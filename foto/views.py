@@ -32,8 +32,17 @@ def fetch(request):
 
 
 
-def login(reuqest):
-    return HttpResponse("HI")
+def auth(reuqest):
+    return render(reuqest,"login.html")
+
+
+
+
+def album(request):
+    dr=os.listdir("static")
+    
+
+    return render(request,"album.html")
 
 
 

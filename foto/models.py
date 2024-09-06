@@ -8,8 +8,8 @@ from django.contrib.auth.models import User
 
 
 class profile(models.Model):
-    user=models.OneToOneField(User,primary_key=True,on_delete=models.CSACADE)
-    avater=models.ImageField(null=True,default="static\doctor.jpg")
+    user=models.OneToOneField(User,primary_key=True,on_delete=models.CASCADE)
+    avater=models.ImageField(null=True)
 
     
 

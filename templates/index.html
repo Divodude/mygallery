@@ -45,8 +45,8 @@
             border: none;
         }
         .user-avatar {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             margin-left: 15px;
@@ -54,7 +54,9 @@
         .upload-icon {
             font-size: 24px;
             cursor: pointer;
-            margin-right: 15px;
+            color:white;
+            margin-right: 45px;
+            width:50px;
         }
     </style>
 </head>
@@ -90,11 +92,14 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                     <h1 class="h2">Photo Gallery</h1>
                     
+                    {% if request.user.is_authenticated %}
                     <!-- Upload Icon and User Avatar -->
                     <div class="d-flex align-items-center">
                         <input type="text" class="form-control" placeholder="Search Photos">
                         <i class="bi bi-upload upload-icon"></i>
-                        <img src="https://via.placeholder.com/40" class="user-avatar" alt="User Avatar">
+                        <img src="{{ user.profile.avater.url }}" class="user-avatar" alt="User Avatar">
+                        {% endif %}
+
                     </div>
                 </div>
 
